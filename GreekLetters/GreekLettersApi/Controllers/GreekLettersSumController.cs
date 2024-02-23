@@ -1,4 +1,6 @@
 ﻿using GreekLettersApi.Models;
+using GreekLettersDomain.DTO;
+using GreekLettersDomain.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +18,7 @@ namespace GreekLettersApi.Controllers
         }
 
         [HttpPost("question")]
-        public async Task<IActionResult> question([FromBody] QuestionRequestModel model)
+        public async Task<IActionResult> question([FromBody] QuestionRequestDTO model)
         {
             /*
             {
