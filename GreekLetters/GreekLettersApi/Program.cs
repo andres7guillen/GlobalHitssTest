@@ -1,3 +1,6 @@
+using GreekLettersDomain.Services;
+using GreekLettersInfrastructure.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<Dictionary<string, List<int>>>(new Dictionary<string, List<int>>());
+builder.Services.AddScoped<IProblemService, ProblemService>();
+builder.Services.AddScoped<IQuestionService, QuestionService>();
 
 
 var app = builder.Build();
